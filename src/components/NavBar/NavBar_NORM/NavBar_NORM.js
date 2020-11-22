@@ -6,71 +6,54 @@ class NavBar_NORM extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			isNormalScreen: props.props.isNormalScreen,
-			isTallScreen: props.props.isTallScreen,
-			isWideScreen: props.props.isWideScreen,
+			screen: props.props.screen,
 			open: 1,
-			Login: "false"
+			Login: props.props.Login,
+			Username: "ShopHere co",
+			Password: props.props.Password,
+			Email: props.props.Email,
+			Phone: props.props.Phone,
+			LoginValidatedFunction: props.props.LoginValidatedFunction
 		}
 		
 		this.render = this.render.bind(this);
 		this.OpenCloseNav = this.OpenCloseNav.bind(this);
 	}
 	render() {
-		console.log("TEST");
 		let comp;
-		if (this.state.isTallScreen === 'true') {
+		
+		if (this.state.Login === "true") {
 			comp = 
-			<div id="NAV_TALL">
-				
-				
-			</div>;
-		}
-		else if (this.state.isWideScreen === 'true') {
-			comp = <div id="NAV_WIDE"></div>;
-		}
-		else if (this.state.isNormalScreen === 'true') {
-			let left;
-			if (this.state.open === 1) {
-				left = 0;
-			}
-			else {
-				left = -300;
-			}
-			
-			let sc = "";
-			if (this.state.isNormalScreen) {
-				sc = "NORM";
-			}
-			else if (this.state.isTallScreen) {
-				sc = "TALL";
-			}
-			else {
-				sc = "WIDE";
-			}
-			
-			comp = 
-			<div id="NAV_NORM" style={{left: left}}>
+			<div id="NAV_NORM" style={{left: this.state.open}}>
 				<div id="NAV_NORM_BODY">
 					<div id="NAV_NORM_PROFILE_INFO">
-						<button id="NAV_NORM_PROFILE_PIC" />
-						<label id="NAV_NORM_PROFILE_NAME">FakeCorp co</label>
+						<a id="NAV_NORM_PROFILE_PIC" />
+						<label id="NAV_NORM_PROFILE_NAME">{this.state.Username}</label>
+					</div>
+				
+					<div id="NAV_NORM_LINK_DIV">
+						<NavBar_Button screen={this.state.screen} name="HOME" text="Home" link="https://www.google.com" />
+						<NavBar_Button screen={this.state.screen} name="ABOUTUS" text="About Us" link="https://www.google.com" />
+						<NavBar_Button screen={this.state.screen} name="STAFF" text="Staff" link="https://www.google.com" />
+						<NavBar_Button screen={this.state.screen} name="PORTFOLLIO" text="Our Portfollio" link="https://www.google.com" />
+						<NavBar_Button screen={this.state.screen} name="OURSERVICES" text="Our Services" link="https://www.google.com" />
+						<br/>
+						<br/>
+						<NavBar_Button screen={this.state.screen} name="YOURPROFILE" text="Your Profile" link="https://www.google.com" />
+						<NavBar_Button screen={this.state.screen} name="YOURWEBSITES" text="Your Websites" link="https://www.google.com" />
+						<NavBar_Button screen={this.state.screen} name="YOURMAINTENANCE" text="Your Maintenance" link="https://www.google.com" />
+						<NavBar_Button screen={this.state.screen} name="REQUESTMAINTENANCE" text="Request Maintenance" link="https://www.google.com" />
 					</div>
 					
-					<div id="NAV_NORM_LINK_DIV">
-						<NavBar_Button screen={sc} name="HOME" text="Home" link="https://www.google.com" />
-						<br/>
-						<NavBar_Button screen={sc} name="HOME" text="Home" link="https://www.google.com" />
-						<br/>
-						<NavBar_Button screen={sc} name="HOME" text="Home" link="https://www.google.com" />
-						<br/>
-						<NavBar_Button screen={sc} name="HOME" text="Home" link="https://www.google.com" />
-						<br/>
-					</div>
+					<div id="NAV_NORM_LOGO" />
 				</div>
 				<button id="NAV_NORM_OPENCLOSE" onClick={this.OpenCloseNav}/>
 			</div>;
 		}
+		else {
+			
+		}
+		
 		
 		return(
 			comp
@@ -78,22 +61,19 @@ class NavBar_NORM extends React.Component {
 	}
 	UNSAFE_componentWillReceiveProps(props) {
 		this.setState({
-			isNormalScreen: props.props.isNormalScreen,
-			isTallScreen: props.props.isTallScreen,
-			isWideScreen: props.props.isWideScreen
+			screen: props.props.screen
 		});
 	}
 	
 	OpenCloseNav() {
-		console.log("test");
-		if (this.state.open === 1) {
+		if (this.state.open === 0) {
 			this.setState({
-				open: 0
+				open: -300
 			});
 		}
 		else {
 			this.setState({
-				open: 1
+				open: 0
 			});
 		}
 	}

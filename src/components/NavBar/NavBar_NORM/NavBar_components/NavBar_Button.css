@@ -1,0 +1,73 @@
+.Nav_NORM_Link {
+	color: black;
+	text-decoration: none;
+}
+
+.Nav_NORM_Div {
+	border-style: solid;
+	border-width: 1px;
+	border-color: rgb(16, 16, 33);
+	background-color: rgba(24, 24, 38, .9);
+	vertical-align: middle;
+	padding-top: 3px;
+	padding-left:3px;
+	color:white;
+}
+.Nav_NORM_Div:hover {
+	border-style: solid;
+	border-width: 1px;
+	background-color: rgba(0, 0, 0, .9);
+}
+.Nav_NORM_Div:active {
+	border-style: solid;
+	border-width: 1px;
+	background-color: rgba(255, 255, 255, .9);
+}
+.Nav_NORM_Button {
+	border-style: none;
+}
+#NAV_NORM_HOME_BUTTON {
+	background-image: url("./house_ico.svg");
+	background-size: 100%;
+	background-repeat: no-repeat;
+}
+#NAV_NORM_ABOUTUS_BUTTON {
+	background-image: url("./questionmark_ico.svg");
+	background-size: 100%;
+	background-repeat: no-repeat;
+}
+#NAV_NORM_STAFF_BUTTON {
+	background-image: url("./person_ico.svg");
+	background-size: 100%;
+	background-repeat: no-repeat;
+}
+#NAV_NORM_PORTFOLLIO_BUTTON {
+	background-image: url("./paper_ico.svg");
+	background-size: 100%;
+	background-repeat: no-repeat;
+}
+#NAV_NORM_OURSERVICES_BUTTON {
+	background-image: url("./services_ico.svg");
+	background-size: 100%;
+	background-repeat: no-repeat;
+}
+#NAV_NORM_YOURPROFILE_BUTTON {
+	background-image: url("./profile_ico.svg");
+	background-size: 110%;
+	background-repeat: no-repeat;
+}
+#NAV_NORM_YOURWEBSITES_BUTTON {
+	background-image: url("./websites_ico.svg");
+	background-size: 100%;
+	background-repeat: no-repeat;
+}
+#NAV_NORM_YOURMAINTENANCE_BUTTON {
+	background-image: url("./wrench_ico.svg");
+	background-size: 100%;
+	background-repeat: no-repeat;
+}
+#NAV_NORM_REQUESTMAINTENANCE_BUTTON {
+	background-image: url("./wrenchcircle_ico.svg");
+	background-size: 100%;
+	background-repeat: no-repeat;
+}

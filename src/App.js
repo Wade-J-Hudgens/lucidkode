@@ -1,5 +1,6 @@
-import NavBar from './components/NavBar';
+import NavBar from './components/NavBar/NavBar';
 import NavBar_NORM from './components/NavBar/NavBar_NORM/NavBar_NORM'
+import Home from './components/Home/Home';
 import React from 'react';
 
 class App extends React.Component {
@@ -7,32 +8,16 @@ class App extends React.Component {
 		super();
 		let w = window.innerWidth;
 		let h = window.innerHeight;
-		let r = h/w;
+		this.state = {
+			screen: "NORM",
+			Login: "true",
+			Username: "",
+			Password: "",
+			Email: "",
+			Phone: ""
+		}
 		
-		if (r <= 9/18) {
-			this.state = {
-				isTallScreen: 'false',
-				isWideScreen: 'true',
-				isNormalScreen: 'false'
-			}
-			console.log('wide');
-		}
-		else if (r >= 16/9) {
-			this.state = {
-				isTallScreen: 'true',
-				isWideScreen: 'false',
-				isNormalScreen: 'false'
-			}
-			console.log('tall');
-		}
-		else {
-			this.state = {
-				isTallScreen: 'false',
-				isWideScreen: 'false',
-				isNormalScreen: 'true'
-			}
-			console.log('normal');
-		}
+		
 		
 		this.render = this.render.bind(this);
 		this.ResizeHandler = this.ResizeHandler.bind(this);
@@ -40,48 +25,61 @@ class App extends React.Component {
 	}
 	
 	render() {
-		let props = {
-			isNormalScreen: this.state.isNormalScreen,
-			isWideScreen: this.state.isWideScreen,
-			isTallScreen: this.state.isTallScreen
+		if (this.state.screen === "NORM") {
+			let props = {
+				screen: this.state.screen,
+				Login: this.state.Login,
+				Username: this.state.Username,
+				Password: this.state.Password,
+				Email: this.state.Email,
+				Phone: this.state.Phone,
+				LoginValidatedFunction: this.LoginValidated 
+			}
+			return (
+				<div id="LUCIDKODE">
+					<NavBar props={props}/>
+					<Home props={props} />
+				</div>
+			);
 		}
-		return (
-			<div id="LUCIDKODE">
-				<NavBar_NORM props={props}/>
-			</div>
-		);
+		else if (this.state.screen === "WIDE") {
+			return(<div />);
+		}
+		else {
+			return(<div />);
+		}
 	}
 	
 	
 	ResizeHandler() {
 		let w = window.innerWidth;
 		let h = window.innerHeight;
+		this.setState({
+			screen: "NORM"
+		})
+	}
+	
+	DetermineScreenType(w, h) {
 		let r = h/w;
 		
 		if (r <= 9/18) {
-			this.setState ({
-				isTallScreen: 'false',
-				isWideScreen: 'true',
-				isNormalScreen: 'false'
-			});
-			console.log('wide');
+			return("WIDE");
 		}
 		else if (r >= 16/9) {
-			this.setState ({
-				isTallScreen: 'true',
-				isWideScreen: 'false',
-				isNormalScreen: 'false'
-			});
-			console.log('tall');
+			return("TALL");
 		}
 		else {
-			this.setState ({
-				isTallScreen: 'false',
-				isWideScreen: 'false',
-				isNormalScreen: 'true'
-			});
-			console.log('normal');
+			return("NORM");
 		}
+	}
+	LoginValidated(Username, Password, Email, Phone) {
+		this.setState({
+			Login: "true",
+			Username: Username,
+			Password: Password,
+			Email: Email,
+			Phone: Phone
+		});
 	}
 }
 

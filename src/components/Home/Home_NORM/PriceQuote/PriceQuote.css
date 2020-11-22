@@ -1,0 +1,16 @@
+#PriceQuote_NORM {
+	position: absolute;
+	left: 2%;
+	top: 550px;
+	width:96%;
+	height:500px;
+	
+	background-image: url("./PriceQuoteAssets/Background.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	
+	border-style: solid;
+	border-width: 2px;
+	border-color: rgb(0, 0, 0);
+}

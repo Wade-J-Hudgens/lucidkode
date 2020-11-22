@@ -10,18 +10,56 @@
 	width: 300px;
 	height: 850px;
 	background: rgb(0,49,97);
-	background: linear-gradient(180deg, rgba(84, 87, 150,1) 20%, rgba(122,168,245,0) 100%);
+	background: linear-gradient(180deg, rgba(0, 0, 0,1) 0%, rgba(120,168,245,0) 100%);
+	border-right-style: solid;
+	border-right-width: 1px;
+	border-right-color: rgb(0, 0, 0);
 }
 #NAV_NORM_OPENCLOSE {
 	position: absolute;
-	top: 0px;
+	top: 50px;
 	right: 0px;
 	width: 50px;
 	height: 50px;
-	background-color: rgba(94, 130, 189,.5);
+	background-color: rgba(255, 255, 255,.5);
 	border: solid;
 	border-width: 1px;
-	border-color: rgb(61, 86, 128);
+	border-color: rgb(0,0,0);
+	outline: none;
+	
+	background-image: url("./NavBar_Assets/OpenClose_Art.svg");
+	background-size: 50% 50%;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+#NAV_NORM_OPENCLOSE:hover {
+	border-style: outset;
+	border-width: 2px;
+}
+#NAV_NORM_OPENCLOSE:active {
+	border-style: inset;
+	border-width: 2px;
+}
+
+#NAV_NORM_LOGO {
+	position: absolute;
+	left: 60px;
+	bottom: 0px;
+	width: 225px;
+	height: 225px;
+	border-radius: 50%;
+	background-image: url("./NavBar_Assets/logo_transparent_0.png");
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+#NAV_NORM_LOGO:hover {
+	border-style: outset;
+	border-width: 1px;
+}
+#NAV_NORM_LOGO:active {
+	border-style: inset;
+	border-width: 1px;
 }
 
 #NAV_NORM_PROFILE_INFO {
@@ -33,18 +71,34 @@
 }
 #NAV_NORM_PROFILE_PIC {
 	position: absolute;
-	left: 60px;
+	left: 92px;
 	top: 45px;
 	width: 160px;
 	height: 160px;
+	border-style: none;
+	border-radius: 50%;
+	background-image: url("./NavBar_Assets/profile_example.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+#NAV_NORM_PROFILE_PIC:hover {
+	border-style:outset;
+	border-width: 1px;
+}
+#NAV_NORM_PROFILE_PIC:active {
+	border-style:inset;
+	border-width: 1px;
 }
 #NAV_NORM_PROFILE_NAME {
 	position: absolute;
-	left: 60px;
+	left: 92px;
 	top: 215px;
 	width: 160px;
 	height: 25px;
 	text-align: center;
+	font-weight: bold;
+	color: white;
 }
 
 #NAV_NORM_LINK_DIV {
