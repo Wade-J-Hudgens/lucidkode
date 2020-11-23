@@ -3,7 +3,7 @@
 	left: 2%;
 	top: 1100px;
 	width:96%;
-	height:500px;
+	height:150px;
 	
 	background-image: url("./ReviewsAssets/Background.jpg");
 	background-size: cover;
@@ -13,4 +13,49 @@
 	border-style: solid;
 	border-width: 2px;
 	border-color: rgb(0, 0, 0);
+}
+
+.REVIEWS_NORM_BUTTON {
+	position: absolute;
+	width: 12.5%;
+	height: 100%;
+	top: 0%;
+	background-color: rgba(24, 24, 38, .4);
+	border-style:none;
+	border-right-style: solid;
+	border-color: black;
+	border-width: 1px;
+	outline: none;
+	color: white;
+	font-size: 2.5vmin;
+}
+.REVIEWS_NORM_BUTTON:hover {
+	background-color: rgba(0, 0, 0, .4);
+}
+.REVIEWS_NORM_BUTTON:active {
+	background-color: rgba(255, 255, 255, .4);
+}
+#REVIEWS_NORM_ABOUTUS {
+	left: 0%;
+}
+#REVIEWS_NORM_STAFF {
+	left: 12.5%;
+}
+#REVIEWS_NORM_OURPORTFOLLIO {
+	left: 25%;
+}
+#REVIEWS_NORM_OURSERVICES {
+	left: 37.5%;
+}
+#REVIEWS_NORM_YOURPROFILE {
+	left: 50%;
+}
+#REVIEWS_NORM_YOURWEBSITES {
+	left: 62.5%;
+}
+#REVIEWS_NORM_YOURMAINT {
+	left: 75%;
+}
+#REVIEWS_NORM_REQUESTMAINT {
+	left: 87.5%;
 }

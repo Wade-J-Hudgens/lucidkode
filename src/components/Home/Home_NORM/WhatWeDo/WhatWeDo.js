@@ -5,9 +5,9 @@ class WhatWeDo extends React.Component {
 	render() {
 		return(
 			<div id="WhatWeDo_NORM" >
-				<label id="WHATWEDO_NORM_TITLE">What we do</label>
+				<label id="WHATWEDO_NORM_TITLE">What do we do?</label>
 				<div id="WHATWEDO_NORM_TEXTBOX0">
-					<p className="WHATWEDO_NORM_STATE" id="WHATWEDO_NORM_STATEMENT0">We are web development company that develops affordable, clean, and easy to use websites.<br/><br/>Below are some beautiful websites we have made. You can view our full portfollio by clicking "Our Portfollio"</p>
+					<p className="WHATWEDO_NORM_STATE" id="WHATWEDO_NORM_STATEMENT0">We are web development company that develops affordable, clean, and responsive websites.<br/><br/>Below are some beautiful websites we have made. You can view our full portfollio by clicking "Our Portfollio"</p>
 				</div>
 				<div id="WHATWEDO_NORM_EXAMPLES">
 					<div id="WHATWEDO_NORM_SH0" />
